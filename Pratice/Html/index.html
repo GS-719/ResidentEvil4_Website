@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil 4</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" href="../Img/images (1).jpg">
+</head>
+
+<body>
+    <header class="Navbar">
+        <div class="LeftSide_N">
+            <h1 id="GS">GS Games</h1>
+        </div>
+        <div class="Center">
+            <Button class="Btn Btn_D" id="Btn_D_ID">Download Now</Button>
+        </div>
+        <div class="RightSide_N">
+            <Button class="Btn" id="Sign_iN">Sign In</Button>
+            <Button class="Btn" id="Sign_iP">Sign Up</Button>
+        </div>
+    </header>
+    <section class="FirstSection">
+        <div class="main">
+            <video autoplay muted loop id="Video">
+                <source src="../Video/Resident_Evil_4_-_Launch_Trailer(1080p60).mp4">
+            </video>
+        </div>
+    </section>
+    <section class="Features Animation" Name="Animation">
+        <div class="First_F Div_F">
+            <div class="LeftSide">
+                <img src="../Img/download.jpg" class="Img_F" alt="Error">
+            </div>
+            <div class="RightSide">
+                <h2>Survivor</h2>
+                <p class="P_F">Servive from various types of zombies, horror animals and unknown enemies.</p>
+            </div>
+        </div>
+        <div class="Second_F Div_F">
+            <div class="LeftSide">
+                <img src="../Img/images (2).jpg" class="Img_F" alt="Error">
+            </div>
+            <div class="RightSide">
+                <h2>Combat</h2>
+                <p class="P_F">Fight with Combat you love, fight with back-kick, fight multiply enemies at the same
+                    time.</p>
+            </div>
+        </div>
+        <div class="Thirt_F Div_F">
+            <div class="LeftSide">
+                <img src="../Img/images.jpg" class="Img_F" alt="Error">
+            </div>
+            <div class="RightSide">
+                <h2>Shooting</h2>
+                <p class="P_F">Best Shooting Experience forever. Fight with M416, M249, Minigun and AKM etc.</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer class="footer">
+        <p>Copyright &copy; GS Games</p>
+    </footer>
+    <script>
+        var Sign_IN = document.getElementById("Sign_iN");
+        var Sign_UP = document.getElementById("Sign_iP");
+        var Download = document.getElementById("Btn_D_ID");
+        var h1_tag = document.getElementById("GS");
+
+        Sign_IN.addEventListener("click", function (e) {
+            alert("Sign_in");
+        })
+
+        Download.addEventListener("click", () => {
+            alert("Downloading ...");
+        })
+
+        Sign_UP.addEventListener("click", function (e) {
+            alert("Sign_up");
+        })
+
+        // Animation Features
+        let Animation = document.getElementsByName("Animation");
+        window.onscroll = () => {
+            Animation.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 700;
+                let height = sec.offsetHeight;
+
+                if (top >= offset && top < offset + height) {
+                    sec.classList.add("Animation");
+                }
+                else {
+                    sec.classList.remove("Animation");
+                }
+            })
+        }
+
+        // Animation Btn_D
+        Download.addEventListener("mouseover", () => {
+            Download.classList.add("Animation_Btn");
+        })
+        Download.addEventListener("mouseout", () => {
+            Download.classList.remove("Animation_Btn");
+        })
+
+        Sign_UP.addEventListener("mouseover", () => {
+            Sign_UP.classList.add("Animation_Btn");
+        })
+        Sign_UP.addEventListener("mouseout", () => {
+            Sign_UP.classList.remove("Animation_Btn");
+        })
+
+        Sign_IN.addEventListener("mouseover", () => {
+            Sign_IN.classList.add("Animation_Btn");
+        })
+        Sign_IN.addEventListener("mouseout", () => {
+            Sign_IN.classList.remove("Animation_Btn");
+        })
+
+        h1_tag.addEventListener("mouseover", () => {
+            h1_tag.classList.add("GS");
+        })
+        h1_tag.addEventListener("mouseout", () => {
+            h1_tag.classList.remove("GS");
+        })
+
+    </script>
+</body>
+
+</html>
